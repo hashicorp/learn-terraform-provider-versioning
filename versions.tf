@@ -1,4 +1,13 @@
 terraform {
+  /* Uncomment this block to use Terraform Cloud for this tutorial
+  cloud {
+    organization = "organization-name"
+    workspaces {
+      name = "learn-terraform-provider-versioning"
+    }
+  }
+  */
+
   required_providers {
     random = {
       source  = "hashicorp/random"
@@ -7,7 +16,7 @@ terraform {
 
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 2.0.0"
+      version = "~> 4.4.0"
     }
   }
 

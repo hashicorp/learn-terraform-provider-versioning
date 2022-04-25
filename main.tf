@@ -1,5 +1,13 @@
 provider "aws" {
   region = "us-west-2"
+
+  /*
+  default_tags {
+    tags = {
+      hashicorp-learn = "terraform/provider-versioning"
+    }
+  }
+  */
 }
 
 resource "random_pet" "petname" {
@@ -12,4 +20,8 @@ resource "aws_s3_bucket" "sample" {
   acl    = "public-read"
 
   region = "us-west-2"
+
+  tags = {
+    public_bucket = true
+  }
 }
